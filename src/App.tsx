@@ -1,8 +1,14 @@
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
+import DevicesIcon from '@mui/icons-material/Devices';
 import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 
+import { Flex } from '@/components/Flex';
+import { Footer } from '@/components/Footer';
+import { Header } from '@/components/Header';
 import { NomineeCard } from '@/components/NomineeCard';
 import { SuccessModal } from '@/components/SuccessModal';
+import { employeeMockData } from '@/db/employeeMockData';
 import { getEmployees } from '@/server/getEmployees';
 import { CATEGORIES } from '@/utils/constants';
 import { Employee } from '@/utils/types';
@@ -29,6 +35,8 @@ function App() {
         const data = await getEmployees();
         setEmployees(data);
       } catch (err) {
+        // Fake data to check UX/UI
+        setEmployees(employeeMockData);
         console.log(err);
       } finally {
         setLoading(false);
@@ -46,46 +54,53 @@ function App() {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <Box>
-      <Container sx={{ background: '#fff' }}>
-        <Box m={4}>
+    <Box m={'-10px -10px'} position="relative" overflow="hidden">
+      <Header />
+      <Box
+        sx={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          backgroundImage: 'url(src/assets/banner.png)',
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          opacity: 0.15,
+          zIndex: -1,
+        }}
+      ></Box>
+      <Container maxWidth="xl">
+        <Box mx={4} my={12}>
           <Box pb={2}>
-            <Typography textAlign="center" variant="h4">
-              AWARDS 2021
+            <Typography
+              textAlign="center"
+              variant="h6"
+              fontWeight="bold"
+              color="rgb(202, 31, 38)"
+            >
+              NOMINEE AWARDS 2024
+            </Typography>
+          </Box>
+          <Box pb={2}>
+            <Typography textAlign="center" variant="h4" fontWeight="bold">
+              Nominate Your Favorite Employees
             </Typography>
           </Box>
           <Box m={4}>
-            <Box bgcolor="#624DE7" p={2} my={4}>
-              <Typography color="white" variant="h6">
-                Business Department
-              </Typography>
-            </Box>
-            <Grid container spacing={{ xs: 3, md: 4 }}>
-              {employees &&
-                employees
-                  .filter(
-                    (employee) => employee.category === CATEGORIES.business
-                  )
-                  .map((employeeBusiness) => (
-                    <Grid item xs={12} md={6} lg={4} key={employeeBusiness.id}>
-                      <NomineeCard
-                        id={employeeBusiness.id}
-                        name={employeeBusiness.name}
-                        avatar={employeeBusiness.avatar}
-                        category={employeeBusiness.category}
-                        selected={businessDominee === employeeBusiness.id}
-                        handleBallot={handleBallot}
-                      />
-                    </Grid>
-                  ))}
-            </Grid>
-          </Box>
-          <Box m={4}>
-            <Box bgcolor="#624DE7" p={2} my={4}>
-              <Typography color="white" variant="h6">
+            <Flex
+              bgcolor="rgb(202, 31, 38)"
+              p={3}
+              my={4}
+              alignItems="center"
+              borderRadius={2}
+            >
+              <Box color="white" ml={2}>
+                <DevicesIcon fontSize="large" />
+              </Box>
+              <Typography ml={2} color="white" variant="h6" fontWeight="bold">
                 Technical Department
               </Typography>
-            </Box>
+            </Flex>
             <Grid container spacing={{ xs: 3, md: 4 }}>
               {employees &&
                 employees
@@ -106,25 +121,63 @@ function App() {
                   ))}
             </Grid>
           </Box>
-          <Box>
-            <Button
-              disabled={!businessDominee || !technicalDominee}
-              onClick={handleOpen}
-              variant="contained"
-              size="large"
-              color="success"
-              sx={{
-                px: 7,
-                py: 3,
-                position: 'fixed',
-                bottom: 40,
-                right: 50,
-                fontSize: 20,
-              }}
+          <Box m={4}>
+            <Flex
+              bgcolor="rgb(202, 31, 38)"
+              p={3}
+              my={4}
+              alignItems="center"
+              borderRadius={2}
             >
-              submit ballot
-            </Button>
+              <Box color="white" ml={2}>
+                <BusinessCenterIcon fontSize="large" />
+              </Box>
+              <Typography ml={2} color="white" variant="h6" fontWeight="bold">
+                Business Department
+              </Typography>
+            </Flex>
+            <Grid container spacing={{ xs: 3, md: 4 }}>
+              {employees &&
+                employees
+                  .filter(
+                    (employee) => employee.category === CATEGORIES.business
+                  )
+                  .map((employeeBusiness) => (
+                    <Grid item xs={12} md={6} lg={4} key={employeeBusiness.id}>
+                      <NomineeCard
+                        id={employeeBusiness.id}
+                        name={employeeBusiness.name}
+                        avatar={employeeBusiness.avatar}
+                        category={employeeBusiness.category}
+                        selected={businessDominee === employeeBusiness.id}
+                        handleBallot={handleBallot}
+                      />
+                    </Grid>
+                  ))}
+            </Grid>
           </Box>
+
+          <Button
+            disabled={!businessDominee || !technicalDominee}
+            onClick={handleOpen}
+            variant="contained"
+            size="large"
+            sx={{
+              px: 7,
+              py: 3,
+              background: 'rgb(255, 0, 8)',
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.8)',
+              position: 'fixed',
+              bottom: 40,
+              right: 50,
+              fontSize: 20,
+              '&:hover': {
+                background: 'rgb(197, 52, 57)',
+              },
+            }}
+          >
+            send nominations
+          </Button>
         </Box>
         <SuccessModal
           open={open}
@@ -143,6 +196,7 @@ function App() {
           }
         />
       </Container>
+      <Footer />
     </Box>
   );
 }
