@@ -171,7 +171,9 @@ function App() {
               bottom: 40,
               right: 50,
               fontSize: 16,
+              transition: '0.3s ease',
               '&:hover': {
+                transform: 'scale(1.1)',
                 background: 'rgb(197, 52, 57)',
               },
             }}

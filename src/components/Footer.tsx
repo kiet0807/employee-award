@@ -1,7 +1,7 @@
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import HomeIcon from '@mui/icons-material/Home';
 import PhoneIcon from '@mui/icons-material/Phone';
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Box, Container, Grid, Link, Typography } from '@mui/material';
 
 import { Flex } from '@/components/Flex';
 
@@ -50,15 +50,48 @@ export function Footer() {
                 <Typography fontSize={18} fontWeight="bold">
                   Services
                 </Typography>
-                <Typography mt={3} fontSize={15} sx={{ cursor: 'pointer' }}>
-                  Complete order - Store in warehouse
-                </Typography>
-                <Typography mt={3} fontSize={15} sx={{ cursor: 'pointer' }}>
-                  Shipping - Delivery
-                </Typography>
-                <Typography mt={3} fontSize={15} sx={{ cursor: 'pointer' }}>
-                  Report - Data analysis
-                </Typography>
+                <Link href="/" color="inherit" underline="none">
+                  <Typography
+                    mt={3}
+                    fontSize={15}
+                    sx={{
+                      transition: '0.3s ease',
+                      '&:hover': {
+                        color: 'rgb(202, 31, 38)',
+                      },
+                    }}
+                  >
+                    Complete order - Store in warehouse
+                  </Typography>
+                </Link>
+                <Link href="/" color="inherit" underline="none">
+                  <Typography
+                    mt={3}
+                    fontSize={15}
+                    sx={{
+                      transition: '0.3s ease',
+                      '&:hover': {
+                        color: 'rgb(202, 31, 38)',
+                      },
+                    }}
+                  >
+                    Shipping - Delivery
+                  </Typography>
+                </Link>
+                <Link href="/" color="inherit" underline="none">
+                  <Typography
+                    mt={3}
+                    fontSize={15}
+                    sx={{
+                      transition: '0.3s ease',
+                      '&:hover': {
+                        color: 'rgb(202, 31, 38)',
+                      },
+                    }}
+                  >
+                    Report - Data analysis
+                  </Typography>
+                </Link>
               </Box>
             </Grid>
             <Grid item xs={12} md={6} lg={3} height="70%">
@@ -66,25 +99,58 @@ export function Footer() {
                 <Typography fontSize={18} fontWeight="bold">
                   Contact
                 </Typography>
-                <Flex mt={3} alignItems="center">
-                  <FmdGoodIcon fontSize="large" />
-                  <Typography fontSize={15} ml={3}>
-                    Số 9 Trà Khúc, Phường 02, Quận Tân Bình, Tp. Hồ Chí Minh
-                  </Typography>
-                </Flex>
-                <Flex mt={3} alignItems="center">
-                  <PhoneIcon fontSize="large" />
-                  <Typography fontSize={15} ml={3}>
-                    02836366941
-                  </Typography>
-                </Flex>
-                <Flex mt={3} alignItems="center">
-                  <HomeIcon fontSize="large" />
-                  <Typography fontSize={15} ml={3}>
-                    Đường An Phú Đông 13, P. An Phú Đông, Quận 12, Tp. Hồ Chí
-                    Minh
-                  </Typography>
-                </Flex>
+                <Link href="/" color="inherit" underline="none">
+                  <Flex
+                    mt={3}
+                    alignItems="center"
+                    sx={{
+                      transition: '0.3s ease',
+                      '&:hover': {
+                        color: 'rgb(202, 31, 38)',
+                      },
+                    }}
+                  >
+                    <FmdGoodIcon fontSize="large" />
+                    <Typography fontSize={15} ml={3}>
+                      Số 9 Trà Khúc, Phường 02, Quận Tân Bình, Tp. Hồ Chí Minh
+                    </Typography>
+                  </Flex>
+                </Link>
+                <Link href="/" color="inherit" underline="none">
+                  <Flex
+                    mt={3}
+                    alignItems="center"
+                    sx={{
+                      transition: '0.3s ease',
+                      '&:hover': {
+                        color: 'rgb(202, 31, 38)',
+                      },
+                    }}
+                  >
+                    <PhoneIcon fontSize="large" />
+                    <Typography fontSize={15} ml={3}>
+                      02836366941
+                    </Typography>
+                  </Flex>
+                </Link>
+                <Link href="/" color="inherit" underline="none">
+                  <Flex
+                    mt={3}
+                    alignItems="center"
+                    sx={{
+                      transition: '0.3s ease',
+                      '&:hover': {
+                        color: 'rgb(202, 31, 38)',
+                      },
+                    }}
+                  >
+                    <HomeIcon fontSize="large" />
+                    <Typography fontSize={15} ml={3}>
+                      Đường An Phú Đông 13, P. An Phú Đông, Quận 12, Tp. Hồ Chí
+                      Minh
+                    </Typography>
+                  </Flex>
+                </Link>
               </Box>
             </Grid>
           </Grid>

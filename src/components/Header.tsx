@@ -21,26 +21,62 @@ export function Header() {
             />
           </Link>
           <Flex width="50%" justifyContent="space-around">
-            <Box sx={{ cursor: 'pointer' }}>
-              <Typography fontSize={16} fontWeight={800}>
+            <Link href="/" color="inherit" underline="none">
+              <Typography
+                fontSize={16}
+                fontWeight={800}
+                sx={{
+                  transition: '0.3s ease',
+                  '&:hover': {
+                    color: 'rgb(202, 31, 38)',
+                  },
+                }}
+              >
                 Home
               </Typography>
-            </Box>
-            <Box sx={{ cursor: 'pointer' }}>
-              <Typography fontSize={16} fontWeight={800}>
+            </Link>
+            <Link href="/" color="inherit" underline="none">
+              <Typography
+                fontSize={16}
+                fontWeight={800}
+                sx={{
+                  transition: '0.3s ease',
+                  '&:hover': {
+                    color: 'rgb(202, 31, 38)',
+                  },
+                }}
+              >
                 Services
               </Typography>
-            </Box>
-            <Box sx={{ cursor: 'pointer' }}>
-              <Typography fontSize={16} fontWeight={800}>
+            </Link>
+            <Link href="/" color="inherit" underline="none">
+              <Typography
+                fontSize={16}
+                fontWeight={800}
+                sx={{
+                  transition: '0.3s ease',
+                  '&:hover': {
+                    color: 'rgb(202, 31, 38)',
+                  },
+                }}
+              >
                 Career
               </Typography>
-            </Box>
-            <Box sx={{ cursor: 'pointer' }}>
-              <Typography fontSize={16} fontWeight={800}>
+            </Link>
+            <Link href="/" color="inherit" underline="none">
+              <Typography
+                fontSize={16}
+                fontWeight={800}
+                sx={{
+                  transition: '0.3s ease',
+                  '&:hover': {
+                    color: 'rgb(202, 31, 38)',
+                  },
+                }}
+              >
                 Contact
               </Typography>
-            </Box>
+            </Link>
           </Flex>
         </Flex>
       </Container>
@@ -96,14 +132,16 @@ export function Header() {
             </Box>
             <Box>
               <Button
-                href="#nomination"
+                href="/"
                 variant="contained"
                 size="large"
                 sx={{
                   px: 8,
                   py: 3,
                   background: 'rgb(202, 31, 38)',
+                  transition: '0.3s ease',
                   '&:hover': {
+                    transform: 'scale(1.1)',
                     background: 'rgb(169, 72, 76)',
                   },
                 }}

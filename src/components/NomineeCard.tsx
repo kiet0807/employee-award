@@ -1,3 +1,5 @@
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import {
   Avatar,
   Box,
@@ -5,6 +7,7 @@ import {
   Card,
   CardActions,
   CardContent,
+  Link,
   Paper,
   Typography,
 } from '@mui/material';
@@ -29,7 +32,15 @@ export function NomineeCard({
 }: NomineeCardProps) {
   const onClick = () => handleBallot(id, category);
   return (
-    <Paper elevation={10}>
+    <Paper
+      elevation={10}
+      sx={{
+        transition: '0.3s ease',
+        '&:hover': {
+          transform: 'scale(1.1)',
+        },
+      }}
+    >
       <Card
         sx={{
           p: 1.5,
@@ -64,6 +75,52 @@ export function NomineeCard({
               </Typography>
             </Box>
           </Box>
+          <Flex justifyContent="center">
+            <Link color="rgb(69, 59, 60)" href="/" mr={2}>
+              <Flex
+                border="1px solid grey"
+                height={35}
+                width={35}
+                justifyContent="center"
+                alignItems="center"
+                borderRadius={50}
+                sx={{
+                  transition: '0.3s ease',
+                  opacity: 0.8,
+                  '&:hover': {
+                    transform: 'rotate(90deg)',
+                    opacity: 1,
+                    color: 'rgb(202, 31, 38)',
+                    borderColor: 'rgb(202, 31, 38)',
+                  },
+                }}
+              >
+                <FacebookIcon />
+              </Flex>
+            </Link>
+            <Link color="rgb(69, 59, 60)" href="/">
+              <Flex
+                border="1px solid grey"
+                height={35}
+                width={35}
+                justifyContent="center"
+                alignItems="center"
+                borderRadius={50}
+                sx={{
+                  transition: '0.3s ease',
+                  opacity: 0.8,
+                  '&:hover': {
+                    transform: 'rotate(90deg)',
+                    opacity: 1,
+                    color: 'rgb(202, 31, 38)',
+                    borderColor: 'rgb(202, 31, 38)',
+                  },
+                }}
+              >
+                <InstagramIcon />
+              </Flex>
+            </Link>
+          </Flex>
         </CardContent>
         <CardActions>
           <Box my={1} mb={2}>
