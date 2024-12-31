@@ -54,7 +54,7 @@ function App() {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <Box m={'-10px -10px'} position="relative" overflow="hidden">
+    <Box m={'-8px -8px'} position="relative" overflow="hidden">
       <Header />
       <Box
         sx={{
