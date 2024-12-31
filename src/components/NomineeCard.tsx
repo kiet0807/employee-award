@@ -48,7 +48,7 @@ export function NomineeCard({
           <Flex alignItems="center" justifyContent="center">
             <Avatar
               alt="Nominee image"
-              src="src/assets/avatar.jpg"
+              src="/avatar.jpg"
               sx={{ width: 130, height: 130 }}
             />
           </Flex>
@@ -57,8 +57,8 @@ export function NomineeCard({
             <Typography fontWeight="bold" textAlign="center">
               Team Leader
             </Typography>
-            <Box my={3}>
-              <Typography textAlign="center">
+            <Box my={2}>
+              <Typography textAlign="center" fontSize={15}>
                 A key contributor to the technical team, he optimized systems to
                 enhance efficiency by 25% and resolved critical issues swiftly.
               </Typography>
@@ -66,14 +66,14 @@ export function NomineeCard({
           </Box>
         </CardContent>
         <CardActions>
-          <Box mt={3} mb={1}>
+          <Box my={1} mb={2}>
             <Button
               onClick={onClick}
               variant="contained"
               size="large"
               sx={{
                 px: 5,
-                py: 2,
+                py: 1.5,
                 background: 'rgb(202, 31, 38)',
                 '&:hover': {
                   backgroundColor: 'rgb(169, 72, 76)',

@@ -61,7 +61,7 @@ function App() {
           position: 'absolute',
           width: '100%',
           height: '100%',
-          backgroundImage: 'url(src/assets/banner.png)',
+          backgroundImage: 'url(/banner.png)',
           backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
@@ -69,12 +69,12 @@ function App() {
           zIndex: -1,
         }}
       ></Box>
-      <Container maxWidth="xl">
-        <Box mx={4} my={12}>
+      <Container maxWidth="lg">
+        <Box mx={4} my={10}>
           <Box pb={2}>
             <Typography
               textAlign="center"
-              variant="h6"
+              fontSize={18}
               fontWeight="bold"
               color="rgb(202, 31, 38)"
             >
@@ -82,14 +82,14 @@ function App() {
             </Typography>
           </Box>
           <Box pb={2}>
-            <Typography textAlign="center" variant="h4" fontWeight="bold">
+            <Typography textAlign="center" fontSize={28} fontWeight="bold">
               Nominate Your Favorite Employees
             </Typography>
           </Box>
           <Box m={4}>
             <Flex
               bgcolor="rgb(202, 31, 38)"
-              p={3}
+              p={2}
               my={4}
               alignItems="center"
               borderRadius={2}
@@ -97,7 +97,7 @@ function App() {
               <Box color="white" ml={2}>
                 <DevicesIcon fontSize="large" />
               </Box>
-              <Typography ml={2} color="white" variant="h6" fontWeight="bold">
+              <Typography ml={2} color="white" fontSize={16} fontWeight="bold">
                 Technical Department
               </Typography>
             </Flex>
@@ -132,7 +132,7 @@ function App() {
               <Box color="white" ml={2}>
                 <BusinessCenterIcon fontSize="large" />
               </Box>
-              <Typography ml={2} color="white" variant="h6" fontWeight="bold">
+              <Typography ml={2} color="white" fontSize={16} fontWeight="bold">
                 Business Department
               </Typography>
             </Flex>
@@ -163,14 +163,14 @@ function App() {
             variant="contained"
             size="large"
             sx={{
-              px: 7,
-              py: 3,
+              px: 5,
+              py: 2.5,
               background: 'rgb(255, 0, 8)',
               boxShadow: '0 4px 8px rgba(0, 0, 0, 0.8)',
               position: 'fixed',
               bottom: 40,
               right: 50,
-              fontSize: 20,
+              fontSize: 16,
               '&:hover': {
                 background: 'rgb(197, 52, 57)',
               },

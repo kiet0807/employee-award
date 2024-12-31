@@ -10,11 +10,11 @@ export function Footer() {
     <Box width="100%">
       <Box
         sx={{
-          minHeight: 500,
+          minHeight: 400,
           background: 'rgb(63, 59, 59)',
         }}
       >
-        <Container maxWidth="xl" sx={{ height: '100%' }}>
+        <Container maxWidth="lg" sx={{ height: '100%' }}>
           <Grid
             container
             height="100%"
@@ -27,7 +27,7 @@ export function Footer() {
               <Box pr={10}>
                 <Box>
                   <img
-                    src="src/assets/logo.png"
+                    src="/logo.png"
                     alt="logo"
                     loading="lazy"
                     width="350px"
@@ -35,7 +35,7 @@ export function Footer() {
                   />
                 </Box>
                 <Box mb={3}>
-                  <Typography variant="h6" color="white">
+                  <Typography fontSize={15} color="white">
                     N & H Logistics provides comprehensive order fulfillment
                     solutions, from warehousing, packaging, and shipping to
                     logistics management. With an optimized system, extensive
@@ -47,40 +47,40 @@ export function Footer() {
             </Grid>
             <Grid item xs={12} md={6} lg={3} height="70%">
               <Box color="white" my={3}>
-                <Typography variant="h5" fontWeight="bold">
+                <Typography fontSize={18} fontWeight="bold">
                   Services
                 </Typography>
-                <Typography mt={3} fontSize={18} sx={{ cursor: 'pointer' }}>
+                <Typography mt={3} fontSize={15} sx={{ cursor: 'pointer' }}>
                   Complete order - Store in warehouse
                 </Typography>
-                <Typography mt={3} fontSize={18} sx={{ cursor: 'pointer' }}>
+                <Typography mt={3} fontSize={15} sx={{ cursor: 'pointer' }}>
                   Shipping - Delivery
                 </Typography>
-                <Typography mt={3} fontSize={18} sx={{ cursor: 'pointer' }}>
+                <Typography mt={3} fontSize={15} sx={{ cursor: 'pointer' }}>
                   Report - Data analysis
                 </Typography>
               </Box>
             </Grid>
             <Grid item xs={12} md={6} lg={3} height="70%">
               <Box color="white" my={3}>
-                <Typography variant="h5" fontWeight="bold">
+                <Typography fontSize={18} fontWeight="bold">
                   Contact
                 </Typography>
                 <Flex mt={3} alignItems="center">
                   <FmdGoodIcon fontSize="large" />
-                  <Typography fontSize={18} ml={3}>
+                  <Typography fontSize={15} ml={3}>
                     Số 9 Trà Khúc, Phường 02, Quận Tân Bình, Tp. Hồ Chí Minh
                   </Typography>
                 </Flex>
                 <Flex mt={3} alignItems="center">
                   <PhoneIcon fontSize="large" />
-                  <Typography fontSize={18} ml={3}>
+                  <Typography fontSize={15} ml={3}>
                     02836366941
                   </Typography>
                 </Flex>
                 <Flex mt={3} alignItems="center">
                   <HomeIcon fontSize="large" />
-                  <Typography fontSize={18} ml={3}>
+                  <Typography fontSize={15} ml={3}>
                     Đường An Phú Đông 13, P. An Phú Đông, Quận 12, Tp. Hồ Chí
                     Minh
                   </Typography>
@@ -89,6 +89,9 @@ export function Footer() {
             </Grid>
           </Grid>
         </Container>
+        <Typography textAlign="center" fontSize={14} color="white">
+          © Copyright by Kiet Nguyen - All right reserved.
+        </Typography>
       </Box>
     </Box>
   );
